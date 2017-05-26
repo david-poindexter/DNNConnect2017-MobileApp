@@ -1,0 +1,11 @@
+<ion-view title="Speakers" id="page5">
+  <ion-content padding="false" class="has-header">
+    <ion-list id="speakers-list2">
+      <ion-item class="item-avatar" id="speakers-list-item2" ng-repeat="session in allSessions">
+        <img src="http://dnn-connect.org/DnnImageHandler.ashx?mode=profilepic&amp;w=64&amp;h=64&amp;userId={{session.Speakers[0].Key}}">
+        <h2>{{session.Title}}</h2>
+        <p style="white-space:normal;">{{session.Speakers[0].Value}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

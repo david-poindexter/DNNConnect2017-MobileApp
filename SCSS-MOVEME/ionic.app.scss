@@ -1,0 +1,57 @@
+$positive: #00AEEF;
+$assertive: #ED1C24;
+$SIDEMENU_TOP: #47292B;
+$SIDEMENU_BOTTOM: #47292B;
+$SIDEMENU_TRANSPARENCY: rgba(255,255,255,0.4);
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.item h2 {
+	white-space: normal;
+}
+
+.bulletList {
+	list-style-type: disc;
+	list-style-position: inside;
+	margin-left: 10px;
+}
+
+.item-thumbnail-left, .item-thumbnail-left .item-content {
+	padding-left: 70px;
+}
+
+.item-thumbnail-left > img: first-child, .item-thumbnail-left .item-image, .item-thumbnail-left .item-content > img: first-child, .item-thumbnail-left .item-content .item-image {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	max-width: 50px;
+	max-height: 50px;
+	width: 100%;
+	height: 100%;
+}
+
+.side-menu-item, .side-menu-item h2, .side-menu-item p {
+	background: none;
+	color: white;
+	font-weight: 300;
+	border: 0px;
+	.item-content {
+		background: none;
+		&.activated {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+		
+	}
+	&.active-page-highlight {
+		.item-content {
+			background: $SIDEMENU_TRANSPARENCY;
+		}
+		
+	}
+}
+.side-menu-gradient {
+	background: -webkit-linear-gradient(left top, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -o-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: -moz-linear-gradient(bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+	background: linear-gradient(to bottom right, $SIDEMENU_TOP, $SIDEMENU_BOTTOM);
+}
+

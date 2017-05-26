@@ -1,0 +1,22 @@
+<ion-view title="Sessions" id="page2">
+  <ion-content padding="false" class="has-header">
+    <div class="spacer" style="height: 0px;"></div>
+    <h3 id="sessions-heading5" ng-show="slotType == 0" style="color:#000000;text-align:center;">Day {{dayNr}}</h3>
+    <h4 id="sessions-heading6" ng-show="slotType == 0" style="color:#000000;text-align:center;">{{title}}</h4>
+    <ion-list id="sessions-list1">
+      <ion-item class="item-avatar" id="sessions-list-item1" ui-sref="tabsController.session({&quot;sessionId&quot;:&quot;&quot;+session.SessionId+&quot;&quot;})" ng-repeat="session in allSessions | filter: {SlotId: slotId, DayNr: dayNr}">
+        <img src="http://dnn-connect.org/DnnImageHandler.ashx?mode=profilepic&amp;w=64&amp;h=64&amp;userId={{session.Speakers[0].Key}}">
+        <h2>{{session.Title}}</h2>
+        <p style="white-space:normal;">{{session.Speakers[0].Value}}</p>
+      </ion-item>
+    </ion-list>
+    <h3 id="sessions-heading1" ng-show="slotType == 1" style="color:#000000;font-weight:300;text-align:center;">Enjoy Your</h3>
+    <h3 id="sessions-heading2" ng-show="slotType == 1" style="color:#000000;text-align:center;">{{title}}</h3>
+    <div>
+      <img src="img/54HPXCjTCDtkRux8gZEQ_espresso.jpg" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;" ng-show="title == 'Coffee'">
+    </div>
+    <div>
+      <img src="img/fbO2fcNgRDa1HD4NkMib_Lunch.png" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;" ng-show="title == 'Lunch'">
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,14 @@
+<ion-view title="Schedule" id="page6">
+  <ion-content padding="false" class="has-header">
+    <ion-list id="schedule-list3" ng-repeat="day in days">
+      <ion-item class="item-divider" id="schedule-list-item-divider1"> {{day.Day | friendlyDate}}</ion-item>
+      <ion-item class="item-icon-left item-icon-right" id="schedule-list-item3" ui-sref="tabsController.sessions({&quot;slotId&quot;:&quot;&quot;+slot.Slot.SlotId+&quot;&quot;,&quot;dayNr&quot;:&quot;&quot;+day.DayNr+&quot;&quot;,&quot;slotType&quot;:&quot;&quot;+slot.Slot.SlotType+&quot;&quot;,&quot;title&quot;:&quot;&quot;+slot.Slot.Title+&quot;&quot;})"
+        ng-repeat="slot in day.Slots" ng-show="hasSessions(slot.Sessions, slot.Slot.SlotType)">
+        <i class="icon ion-android-calendar"></i>
+        <strong>{{slot.Slot.Title}}</strong>
+        <br>{{slot.Slot.Start | friendlyTime}} ({{slot.Slot.DurationMins}} mins)
+        <i class="icon ion-android-arrow-dropright-circle"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
